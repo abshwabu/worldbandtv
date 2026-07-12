@@ -1,0 +1,21 @@
+{
+  "id": "com.bina.worldbandtv",
+  "version": "1.0.0",
+  "vendor": "Bina Technologies",
+  "type": "web",
+  "main": "index.html",
+  "title": "WorldBand TV",
+  "icon": "icons/icon-80.png",
+  "largeIcon": "icons/icon-130.png",
+  "bgImage": "icons/splash-1920x1080.png",
+  "bgColor": "#0B0E14",
+  "iconColor": "#0B0E14",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true,
+  "transparent": false,
+  "allowVideoExtractOnLoad": false,
+  "handlesRelaunch": true,
+  "requiredPermissions": [
+    "internet"
+  ]
+}

@@ -558,6 +558,13 @@
   /* ---------------------------------------------------------------------
      Boot
      --------------------------------------------------------------------- */
+  function fitViewport() {
+    const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080, 1);
+    document.body.style.transform = scale < 1 ? "scale(" + scale + ")" : "";
+  }
+  fitViewport();
+  window.addEventListener("resize", fitViewport);
+
   document.querySelectorAll(".nav-item[data-nav]").forEach((item) => {
     item.addEventListener("click", () => {
       const view = item.dataset.nav;

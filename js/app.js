@@ -394,12 +394,14 @@
   function openPlayer(list, index) {
     state.currentIndex = index;
     state.stations = list;
+    document.body.classList.add("player-open");
     el.playerView.classList.add("active");
     el.playerView.focus();
     playIndex(index);
   }
 
   function closePlayer() {
+    document.body.classList.remove("player-open");
     el.playerView.classList.remove("active");
     stopStream();
     // Return focus to the grid card that was playing, if still present.
@@ -414,16 +416,13 @@
     if (hls) { hls.destroy(); hls = null; }
   }
 
-  function playIndex(index) {
-    const list = state.stations;
-    if (!list.length) return;
-    const i = ((index % list.length) + list.length) % list.length;
-    state.currentIndex = i;
-    const ch = list[i];
-    state.current = ch;
-    stopStream();
+  function usesNativePipeline() {
+    return !!(el.video.canPlayType("application/vnd.apple.mpegurl") ||
+      el.video.canPlayType("application/vnd.apple.mpegURL"));
+  }
 
-    el.channelNumber.textContent = String(i + 1).padStart(3, "0");
+  function updatePlayerMeta(ch, index) {
+    el.channelNumber.textContent = String(index + 1).padStart(3, "0");
     el.playerName.textContent = ch.name;
     el.playerMeta.textContent = [ch.group, ch.country].filter(Boolean).join(" · ") || "Live channel";
     el.playerLogo.innerHTML = "";
@@ -437,10 +436,28 @@
     }
     el.playerStatus.textContent = "Connecting…";
     el.playerStatus.classList.remove("live");
+  }
 
-    const src = ch.url;
+  function startStream(src, zap) {
     const isHls = /\.m3u8?($|\?)/i.test(src);
-    if (isHls && !el.video.canPlayType("application/vnd.apple.mpegurl") && window.Hls && Hls.isSupported()) {
+    const useHlsJs = isHls && !usesNativePipeline() && window.Hls && Hls.isSupported();
+
+    // Channel surf: swap the source in place. Tearing down the element makes
+    // webOS TV shrink playback into the corner PiP window.
+    if (zap && useHlsJs && hls) {
+      hls.loadSource(src);
+      el.video.play().catch(() => {});
+      return;
+    }
+    if (zap && !useHlsJs) {
+      if (hls) { hls.destroy(); hls = null; }
+      el.video.src = src;
+      el.video.play().catch(() => {});
+      return;
+    }
+
+    stopStream();
+    if (useHlsJs) {
       hls = new Hls({ maxBufferLength: 20 });
       hls.loadSource(src);
       hls.attachMedia(el.video);
@@ -448,10 +465,32 @@
     } else {
       el.video.src = src;
     }
-    el.video.play().catch(() => {}); // autoplay rejection is handled by the 'error'/'waiting' listeners
+    el.video.play().catch(() => {});
+  }
+
+  function playIndex(index, options) {
+    const opts = options || {};
+    const list = state.stations;
+    if (!list.length) return;
+    const i = ((index % list.length) + list.length) % list.length;
+    const zap = !!opts.zap;
+    const overlayHidden = el.playerOverlay.classList.contains("hidden");
+    state.currentIndex = i;
+    const ch = list[i];
+    state.current = ch;
+
+    updatePlayerMeta(ch, i);
+    startStream(ch.url, zap);
 
     pushRecent(ch);
-    showOverlay();
+    if (!zap) {
+      showOverlay();
+    } else if (!overlayHidden) {
+      refreshOverlayTimer();
+    } else {
+      clearTimeout(overlayTimer);
+    }
+    el.playerView.focus();
   }
 
   function handleStreamError() {
@@ -468,6 +507,9 @@
 
   function showOverlay() {
     el.playerOverlay.classList.remove("hidden");
+    refreshOverlayTimer();
+  }
+  function refreshOverlayTimer() {
     clearTimeout(overlayTimer);
     overlayTimer = setTimeout(() => el.playerOverlay.classList.add("hidden"), 4500);
   }
@@ -516,8 +558,8 @@
 
     if (inPlayer) {
       switch (e.keyCode) {
-        case 38: playIndex(state.currentIndex - 1); e.preventDefault(); break; // up = prev channel
-        case 40: playIndex(state.currentIndex + 1); e.preventDefault(); break; // down = next channel
+        case 38: playIndex(state.currentIndex - 1, { zap: true }); e.preventDefault(); break; // up = prev channel
+        case 40: playIndex(state.currentIndex + 1, { zap: true }); e.preventDefault(); break; // down = next channel
         case 13: case 23: toggleOverlayOrPlay(); e.preventDefault(); break; // OK
         case 461: case 8: closePlayer(); e.preventDefault(); break; // Back
         case 415: el.video.play(); showOverlay(); break; // Play
@@ -559,6 +601,8 @@
      Boot
      --------------------------------------------------------------------- */
   function fitViewport() {
+    // webOS TV renders video on a separate plane; body transforms break placement.
+    if (/webOS/i.test(navigator.userAgent)) return;
     const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080, 1);
     document.body.style.transform = scale < 1 ? "scale(" + scale + ")" : "";
   }

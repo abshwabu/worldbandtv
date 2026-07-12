@@ -115,6 +115,7 @@ body { width:1920px; height:1080px; overflow:hidden; background:radial-gradient(
 .player-view video { position:absolute; left:0; top:0; width:1920px; height:1080px; background:#000; z-index:0; }
 
 .player-overlay { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; justify-content:space-between; padding:44px var(--safe); background:linear-gradient(180deg, rgba(6,8,13,.75) 0%, transparent 22%, transparent 70%, rgba(6,8,13,.85) 100%); opacity:1; transition:opacity .4s ease; pointer-events:none; }
+.player-overlay:not(.hidden) .player-top { pointer-events:auto; }
 .player-overlay.hidden { opacity:0; }
 
 .player-top { display:flex; align-items:center; gap:22px; }
@@ -128,8 +129,28 @@ body { width:1920px; height:1080px; overflow:hidden; background:radial-gradient(
 .player-status.live { color:var(--signal); }
 .player-status .pulse { width:8px; height:8px; border-radius:50%; background:currentColor; box-shadow:0 0 8px currentColor; }
 
-.player-bottom { display:flex; align-items:center; gap:16px; }
-.hint { font-size:14px; color:var(--paper-dim); background:rgba(19,24,38,.7); border:1px solid #232B46; padding:10px 16px; border-radius:10px; }
+.player-bottom { display:flex; flex-direction:column; align-items:flex-start; gap:16px; pointer-events:auto; }
+
+.player-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.pbtn {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  min-width:72px; height:72px; padding:0 20px; border-radius:12px;
+  background:rgba(19,24,38,.82); border:1px solid #232B46; color:var(--paper);
+  cursor:pointer; transition:transform .15s, background .15s, box-shadow .15s;
+}
+.pbtn svg { width:32px; height:32px; fill:currentColor; flex-shrink:0; }
+.pbtn span { display:none; font-family:var(--font-body); font-weight:600; font-size:16px; white-space:nowrap; }
+.pbtn.wide { min-width:220px; padding:0 24px; }
+.pbtn.wide svg { width:24px; height:24px; fill:none; }
+.pbtn.wide span { display:inline; }
+.pbtn:focus, .pbtn.focused {
+  outline:none; background:var(--amber); color:var(--void); border-color:var(--amber);
+  transform:scale(1.05); box-shadow:0 0 0 3px var(--amber-soft);
+}
+.pbtn.is-fav svg { fill:var(--amber); stroke:var(--amber); }
+.pbtn:focus.is-fav svg, .pbtn.focused.is-fav svg { fill:var(--void); stroke:var(--void); }
+
+.hint { font-size:14px; color:var(--paper-dim); background:rgba(19,24,38,.7); border:1px solid #232B46; padding:10px 16px; border-radius:10px; pointer-events:none; }
 .hint b { color:var(--amber); }
 
 .player-view:focus { outline:none; }

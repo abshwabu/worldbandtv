@@ -77,9 +77,20 @@
   const LS_FAV = "wbtv_favorites";
   const LS_RECENT = "wbtv_recent";
   const LS_PLAYLISTS = "wbtv_playlists";
+  const LS_HIDDEN = "wbtv_hidden";
 
   function readLS(key) { try { return JSON.parse(localStorage.getItem(key)) || []; } catch (e) { return []; } }
   function writeLS(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+
+  function filterHidden(list) {
+    const hidden = new Set(readLS(LS_HIDDEN));
+    return list.filter((c) => !hidden.has(c.uid));
+  }
+  function hideChannelUid(uid) {
+    const hidden = readLS(LS_HIDDEN);
+    if (!hidden.includes(uid)) hidden.push(uid);
+    writeLS(LS_HIDDEN, hidden);
+  }
 
   function isFavorite(uid) { return readLS(LS_FAV).some((c) => c.uid === uid); }
   function toggleFavorite(ch) {
@@ -124,7 +135,12 @@
     playerLogo: document.getElementById("playerLogo"),
     playerName: document.getElementById("playerName"),
     playerMeta: document.getElementById("playerMeta"),
-    playerStatus: document.getElementById("playerStatus")
+    playerStatus: document.getElementById("playerStatus"),
+    playerPrev: document.getElementById("playerPrev"),
+    playerNext: document.getElementById("playerNext"),
+    playerFav: document.getElementById("playerFav"),
+    playerFavLabel: document.getElementById("playerFavLabel"),
+    playerHide: document.getElementById("playerHide")
   };
 
   /* ---------------------------------------------------------------------
@@ -156,11 +172,11 @@
      Rendering
      --------------------------------------------------------------------- */
   function renderChannels(list) {
-    state.stations = list;
+    state.stations = filterHidden(list);
     el.grid.innerHTML = "";
-    el.empty.style.display = list.length ? "none" : "block";
+    el.empty.style.display = state.stations.length ? "none" : "block";
     const frag = document.createDocumentFragment();
-    list.forEach((ch, idx) => {
+    state.stations.forEach((ch, idx) => {
       const card = document.createElement("div");
       card.className = "card";
       card.tabIndex = 0;
@@ -186,7 +202,7 @@
       meta.textContent = [ch.group, ch.country].filter(Boolean).join(" · ") || "Channel";
 
       card.appendChild(art); card.appendChild(name); card.appendChild(meta);
-      card.addEventListener("click", () => openPlayer(list, idx));
+      card.addEventListener("click", () => openPlayer(state.stations, idx));
       frag.appendChild(card);
     });
     el.grid.appendChild(frag);
@@ -389,11 +405,10 @@
      Player
      --------------------------------------------------------------------- */
   let hls = null;
-  let overlayTimer = null;
 
   function openPlayer(list, index) {
     state.currentIndex = index;
-    state.stations = list;
+    state.stations = filterHidden(list);
     document.body.classList.add("player-open");
     el.playerView.classList.add("active");
     el.playerView.focus();
@@ -404,6 +419,7 @@
     document.body.classList.remove("player-open");
     el.playerView.classList.remove("active");
     stopStream();
+    if (state.stations.length) renderChannels(state.stations);
     // Return focus to the grid card that was playing, if still present.
     const card = document.querySelector('.card[data-uid="' + (state.current ? cssEscape(state.current.uid) : "") + '"]');
     (card || document.querySelector('.nav-item.active') || document.body).focus();
@@ -436,6 +452,38 @@
     }
     el.playerStatus.textContent = "Connecting…";
     el.playerStatus.classList.remove("live");
+    updatePlayerActions();
+  }
+
+  function updatePlayerActions() {
+    if (!state.current) return;
+    const fav = isFavorite(state.current.uid);
+    el.playerFav.classList.toggle("is-fav", fav);
+    el.playerFavLabel.textContent = fav ? "Remove from Favorites" : "Add to Favorites";
+  }
+
+  function toggleFavoriteCurrent() {
+    if (!state.current) return;
+    const nowFav = toggleFavorite(state.current);
+    updatePlayerActions();
+    showToast(nowFav ? "Added to Favorites" : "Removed from Favorites");
+  }
+
+  function hideCurrentChannel() {
+    const ch = state.current;
+    if (!ch) return;
+    hideChannelUid(ch.uid);
+    const name = ch.name;
+    state.stations = state.stations.filter((c) => c.uid !== ch.uid);
+    if (!state.stations.length) {
+      showToast("Hidden \u201c" + name + "\u201d. No more channels in this list.");
+      closePlayer();
+      renderChannels([]);
+      return;
+    }
+    const idx = state.currentIndex >= state.stations.length ? 0 : state.currentIndex;
+    playIndex(idx, { zap: true });
+    showToast("Hidden \u201c" + name + "\u201d");
   }
 
   function startStream(src, zap) {
@@ -474,7 +522,6 @@
     if (!list.length) return;
     const i = ((index % list.length) + list.length) % list.length;
     const zap = !!opts.zap;
-    const overlayHidden = el.playerOverlay.classList.contains("hidden");
     state.currentIndex = i;
     const ch = list[i];
     state.current = ch;
@@ -483,13 +530,7 @@
     startStream(ch.url, zap);
 
     pushRecent(ch);
-    if (!zap) {
-      showOverlay();
-    } else if (!overlayHidden) {
-      refreshOverlayTimer();
-    } else {
-      clearTimeout(overlayTimer);
-    }
+    if (!zap) showOverlay();
     el.playerView.focus();
   }
 
@@ -507,17 +548,33 @@
 
   function showOverlay() {
     el.playerOverlay.classList.remove("hidden");
-    refreshOverlayTimer();
   }
-  function refreshOverlayTimer() {
-    clearTimeout(overlayTimer);
-    overlayTimer = setTimeout(() => el.playerOverlay.classList.add("hidden"), 4500);
+  function hideOverlay() {
+    el.playerOverlay.classList.add("hidden");
+    el.playerView.focus();
   }
-  function toggleOverlayOrPlay() {
-    if (el.playerOverlay.classList.contains("hidden")) { showOverlay(); return; }
-    if (el.video.paused) { el.video.play(); } else { el.video.pause(); }
-    showOverlay();
+  function toggleOverlay() {
+    if (el.playerOverlay.classList.contains("hidden")) showOverlay();
+    else hideOverlay();
   }
+
+  function focusPlayerButtons(direction) {
+    const buttons = Array.from(document.querySelectorAll(".player-actions .pbtn"));
+    if (!buttons.length) return;
+    const current = document.activeElement;
+    const idx = buttons.indexOf(current);
+    if (idx < 0) {
+      buttons[direction === "left" ? buttons.length - 1 : 0].focus();
+      return;
+    }
+    const next = direction === "left" ? idx - 1 : idx + 1;
+    if (next >= 0 && next < buttons.length) buttons[next].focus();
+  }
+
+  el.playerPrev.addEventListener("click", () => playIndex(state.currentIndex - 1, { zap: true }));
+  el.playerNext.addEventListener("click", () => playIndex(state.currentIndex + 1, { zap: true }));
+  el.playerFav.addEventListener("click", toggleFavoriteCurrent);
+  el.playerHide.addEventListener("click", hideCurrentChannel);
 
   /* ---------------------------------------------------------------------
      Spatial navigation (D-pad) — shared geometry-based approach
@@ -557,14 +614,25 @@
     const isInput = document.activeElement && document.activeElement.tagName === "INPUT";
 
     if (inPlayer) {
+      const onBtn = document.activeElement && document.activeElement.classList.contains("pbtn");
+      const overlayVisible = !el.playerOverlay.classList.contains("hidden");
       switch (e.keyCode) {
-        case 38: playIndex(state.currentIndex - 1, { zap: true }); e.preventDefault(); break; // up = prev channel
-        case 40: playIndex(state.currentIndex + 1, { zap: true }); e.preventDefault(); break; // down = next channel
-        case 13: case 23: toggleOverlayOrPlay(); e.preventDefault(); break; // OK
-        case 461: case 8: closePlayer(); e.preventDefault(); break; // Back
-        case 415: el.video.play(); showOverlay(); break; // Play
-        case 19: el.video.pause(); showOverlay(); break; // Pause
-        case 413: closePlayer(); break; // Stop
+        case 37:
+          if (overlayVisible) { focusPlayerButtons("left"); e.preventDefault(); }
+          break;
+        case 39:
+          if (overlayVisible) { focusPlayerButtons("right"); e.preventDefault(); }
+          break;
+        case 38: playIndex(state.currentIndex - 1, { zap: true }); e.preventDefault(); break;
+        case 40: playIndex(state.currentIndex + 1, { zap: true }); e.preventDefault(); break;
+        case 13: case 23:
+          if (onBtn) { document.activeElement.click(); e.preventDefault(); }
+          else { toggleOverlay(); e.preventDefault(); }
+          break;
+        case 461: case 8: closePlayer(); e.preventDefault(); break;
+        case 415: el.video.play(); break;
+        case 19: el.video.pause(); break;
+        case 413: closePlayer(); break;
         default: break;
       }
       return;
@@ -592,10 +660,7 @@
     }
   });
 
-  // Long-press-free favorite toggle: pressing a dedicated key (yellow/'F') while
-  // a card is focused, or clicking a card's context action, isn't exposed on
-  // most remotes, so favoriting from the grid happens via the player overlay
-  // instead — keep it simple and discoverable with one control surface.
+  // Favorites and hide-from-list are available from the player action bar.
 
   /* ---------------------------------------------------------------------
      Boot

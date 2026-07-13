@@ -1,0 +1,505 @@
+#EXTM3U
+#EXTINF:-1 group-title="BeIN",bein sports premium 1
+http://172.25.25.102:80/beinsport-HD1/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports premium 2
+http://172.25.25.102:80/beinsport-HD2/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports premium 3
+http://172.25.25.102:80/beinsport-HD3/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 1
+http://172.25.25.102:80/beinsport-HD4/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 2
+http://172.25.25.102:80/beinsport-HD5/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 3
+http://172.25.25.102:80/beinsport-HD6/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 4
+http://172.25.25.102:80/beinsport-HD7/index.m3u8
+#EXTINF:-1 group-title="BeIN",BEIN SPORTS 5
+http://172.25.25.102:80/beinsport-HD8/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 6
+http://172.25.25.102:80/beinsport-HD9/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 1
+http://172.25.25.102:80/alkass1/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 3
+http://172.25.25.102:80/Alkass3/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports News
+http://172.25.25.102:80/beinsportnews/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALIRAQIA SPORTS
+http://172.25.25.102:80/IRAQIASPORT/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports NBA
+http://172.25.25.102:80/beINSportNBA/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALFAN
+http://172.25.25.102:80/alfan/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 6
+http://172.25.25.102:80/alkass6/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn Bollywood
+http://172.25.25.102:80/n_bollywood/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn BoxOffice
+http://172.25.25.102:80/n_boxoff/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn Cinema
+http://172.25.25.102:80/n_cinema/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Movies HD1
+http://172.25.25.102:80/beINMovies1HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC MAX
+http://172.25.25.102:80/MBCMAX/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn TURKEY
+http://172.25.25.102:80/n_turk/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn Classic
+http://172.25.25.102:80/n_classic/index.m3u8
+#EXTINF:-1 group-title="BeIN",DOCUMENTRY AR
+http://172.25.25.102:80/Documentary/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn HD Movies
+http://172.25.25.102:80/n_movies/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn Series
+http://172.25.25.102:80/n_series/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALYOUM
+http://172.25.25.102:80/al3youn/index.m3u8
+#EXTINF:-1 group-title="BeIN",AMC
+http://172.25.25.102:80/AMC/index.m3u8
+#EXTINF:-1 group-title="BeIN",ART AFLAM 1
+http://172.25.25.102:80/art1/index.m3u8
+#EXTINF:-1 group-title="BeIN",ART CINEMA
+http://172.25.25.102:80/artcinema/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Drama HD
+http://172.25.25.102:80/beindrama/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Movies HD2
+http://172.25.25.102:80/beINMovies2HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Movies HD3
+http://172.25.25.102:80/beINMovies3HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Movies HD4
+http://172.25.25.102:80/beINMovies4HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Series HD1
+http://172.25.25.102:80/beINSeries1HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",Bein Series HD2
+http://172.25.25.102:80/beINSeries2HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",ksa sport
+http://172.25.25.102:80/beINSportNBA/index.m3u8
+#EXTINF:-1 group-title="BeIN",Cinema 2
+http://172.25.25.102:80/cinema22/index.m3u8
+#EXTINF:-1 group-title="BeIN",DICOVERY ID
+http://172.25.25.102:80/DiscoveryID/index.m3u8
+#EXTINF:-1 group-title="BeIN",DISNEY CHANNEL
+http://172.25.25.102:80/DisneyHD/index.m3u8
+#EXTINF:-1 group-title="BeIN",DISNEY JUNIOR
+http://172.25.25.102:80/Disney-junior/index.m3u8
+#EXTINF:-1 group-title="BeIN",DISNEY XD
+http://172.25.25.102:80/Disney-xd/index.m3u8
+#EXTINF:-1 group-title="BeIN",FIXFOX
+http://172.25.25.102:80/fixfox/index.m3u8
+#EXTINF:-1 group-title="BeIN",Fox Movies
+http://172.25.25.102:80/FOXMovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",GULI ARABI
+http://172.25.25.102:80/guli/index.m3u8
+#EXTINF:-1 group-title="BeIN",ART HEKAYAT 2
+http://172.25.25.102:80/hikayat2/index.m3u8
+#EXTINF:-1 group-title="BeIN",HISTORY 2
+http://172.25.25.102:80/history2/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC3
+http://172.25.25.102:80/MBC3HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC IRAQ HD
+http://172.25.25.102:80/MBCIRAQHD/index.m3u8
+#EXTINF:-1 group-title="BeIN",NICK JR
+http://172.25.25.102:80/NICKJR/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN ACTION
+http://172.25.25.102:80/OSNAction/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN KIDS
+http://172.25.25.102:80/OSNKIDS/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN KIDS ZONE
+http://172.25.25.102:80/Osn-zone/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN LIVING
+http://172.25.25.102:80/Osn-living/index.m3u8
+#EXTINF:-1 group-title="BeIN",MOVIES FIRST 2
+http://172.25.25.102:80/Osn_movies_first2/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA COMEDY
+http://172.25.25.102:80/Rotana_comedy/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY HIST
+http://172.25.25.102:80/SkyPremium/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY SCIFI HORROR
+http://172.25.25.102:80/SkySci_Fi_Horr/index.m3u8
+#EXTINF:-1 group-title="BeIN",TLC
+http://172.25.25.102:80/TLC/index.m3u8
+#EXTINF:-1 group-title="BeIN",TRAVEL CHANNEL
+http://172.25.25.102:80/TravelChannel/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY ACTION
+http://172.25.25.102:80/SkyAction/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN COMEDY
+http://172.25.25.102:80/OSNComedy/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN SERIES FIRS
+http://172.25.25.102:80/OSNseriesFirs/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV MUSICLY
+http://172.25.25.102:80/ontv_musicly/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV BOXOFFICE
+http://172.25.25.102:80/OnTvBoxOffice/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV MOVIES
+http://172.25.25.102:80/OnTvMovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV HORROR
+http://172.25.25.102:80/OnTv_Horror/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV COMEDY
+http://172.25.25.102:80/OnTvComedy/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV ASIA
+http://172.25.25.102:80/OnTvAsia/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV BOLLYWOOD
+http://172.25.25.102:80/OnTv_BollyWood/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV SCIFI
+http://172.25.25.102:80/OnTv_SCIFI/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV ARABIC
+http://172.25.25.102:80/OnTvArabic/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV HISTORY
+http://172.25.25.102:80/ontv_history/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV ANIMATION
+http://172.25.25.102:80/OnTvAnimation/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV CARTOON ZAMAN
+http://172.25.25.102:80/OnTv_CartoonZ/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV TURKEY 1
+http://172.25.25.102:80/ontv_turkey1/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV FUNNY
+http://172.25.25.102:80/OnTv_Funny/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV SERIES
+http://172.25.25.102:80/OnTvSeries/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV ANASHEED
+http://172.25.25.102:80/OnTv_Anashed/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV MELODY
+http://172.25.25.102:80/OnTv_Melody/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV DOCUMENTARY
+http://172.25.25.102:80/OnTv_Douc/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN YA HALA
+http://172.25.25.102:80/OSNYahla/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN YA HALA ALOLA
+http://172.25.25.102:80/OSNYahlaAlowl/index.m3u8
+#EXTINF:-1 group-title="BeIN",ART AFLAM 2
+http://172.25.25.102:80/art2/index.m3u8
+#EXTINF:-1 group-title="BeIN",ART HEKAYAT
+http://172.25.25.102:80/hikayat1/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN MOVIES
+http://172.25.25.102:80/OSNMovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN ENIGMA
+http://172.25.25.102:80/OSNEngima/index.m3u8
+#EXTINF:-1 group-title="BeIN",E!
+http://172.25.25.102:80/E!/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN DISNEY
+http://172.25.25.102:80/OSNDisney/index.m3u8
+#EXTINF:-1 group-title="BeIN",NICKELODEON
+http://172.25.25.102:80/nicklodeon/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN YA HALA CINEMA
+http://172.25.25.102:80/OSNYahlaCinem/index.m3u8
+#EXTINF:-1 group-title="BeIN",COMEDY CENTRAL
+http://172.25.25.102:80/comedycenter/index.m3u8
+#EXTINF:-1 group-title="BeIN",HISTORY
+http://172.25.25.102:80/history1/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC1
+http://172.25.25.102:80/MBC1HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC2
+http://172.25.25.102:80/MBC2HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC4
+http://172.25.25.102:80/MBC4HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC BOLYOOD
+http://172.25.25.102:80/MBCbollywood/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC VARIETY
+http://172.25.25.102:80/MBCVariety/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC DRAMA+
+http://172.25.25.102:80/mbcdramplus/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC DRAMA
+http://172.25.25.102:80/mbcdrama/index.m3u8
+#EXTINF:-1 group-title="BeIN",MBC ACTION
+http://172.25.25.102:80/MBCAction/index.m3u8
+#EXTINF:-1 group-title="BeIN",NAT GEO WILD
+http://172.25.25.102:80/NatGeoWild/index.m3u8
+#EXTINF:-1 group-title="BeIN",PLANET EARTH
+http://172.25.25.102:80/PlanetEarth/index.m3u8
+#EXTINF:-1 group-title="BeIN",TIJI
+http://172.25.25.102:80/Tiji/index.m3u8
+#EXTINF:-1 group-title="BeIN",TDC
+http://172.25.25.102:80/tdc/index.m3u8
+#EXTINF:-1 group-title="BeIN",STAR MOVIES
+http://172.25.25.102:80/starmovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",STAR WORLD
+http://172.25.25.102:80/starworld/index.m3u8
+#EXTINF:-1 group-title="BeIN",Fox Movies Family
+http://172.25.25.102:80/FoxFamilyMovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",Fox Movies Action
+http://172.25.25.102:80/FoxActionMovies/index.m3u8
+#EXTINF:-1 group-title="BeIN",NAT GEO PEOPLE
+http://172.25.25.102:80/NatGeoPeople/index.m3u8
+#EXTINF:-1 group-title="BeIN",DISCOVERY SICEN
+http://172.25.25.102:80/DiscoveryScince/index.m3u8
+#EXTINF:-1 group-title="BeIN",ANIMAL PLANET
+http://172.25.25.102:80/AnimalPlant/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALSHARQIA NEWS
+http://172.25.25.102:80/alsharqia_news/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 2
+http://172.25.25.102:80/alkass2/index.m3u8
+#EXTINF:-1 group-title="BeIN",DMC
+http://172.25.25.102:80/DMC/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV CLASSIC
+http://172.25.25.102:80/ontv_classic/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV LOVE
+http://172.25.25.102:80/ontv_love/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV TURKEY 2
+http://172.25.25.102:80/ontv_turkey2/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV HIKAYAT
+http://172.25.25.102:80/ontv_hekayat/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV MUSIC ARABIC
+http://172.25.25.102:80/ontv_musicarabic/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV TUBE
+http://172.25.25.102:80/ontv_tube/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON Ondemand
+http://172.25.25.102:80/ontv_extra3/index.m3u8
+#EXTINF:-1 group-title="BeIN",HG
+http://172.25.25.102:80/hgtv/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn Gym
+http://172.25.25.102:80/n_gym/index.m3u8
+#EXTINF:-1 group-title="BeIN",Sky Premium
+http://172.25.25.102:80/SkyPremium/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 10
+http://172.25.25.102:80/beinsport-HD10/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 11
+http://172.25.25.102:80/beinsport-HD11/index.m3u8
+#EXTINF:-1 group-title="BeIN",bein sports 12
+http://172.25.25.102:80/beinsport-HD12/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 5
+http://172.25.25.102:80/alkass5/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 7
+http://172.25.25.102:80/alkass7/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alkass 8
+http://172.25.25.102:80/alkass8/index.m3u8
+#EXTINF:-1 group-title="BeIN",KSA 1
+http://172.25.25.102:80/ksasport1/index.m3u8
+#EXTINF:-1 group-title="BeIN",FIGHT BOX
+http://172.25.25.102:80/FightBox/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALIRAQIA
+http://172.25.25.102:80/aliraqia/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALSHARQIYA
+http://172.25.25.102:80/AlSharqiya/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALRASHEED
+http://172.25.25.102:80/alrasheed/index.m3u8
+#EXTINF:-1 group-title="BeIN",UTV
+http://172.25.25.102:80/utv/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALSUMARIA
+http://172.25.25.102:80/AlSumaria/index.m3u8
+#EXTINF:-1 group-title="BeIN",DIJLA
+http://172.25.25.102:80/dijla/index.m3u8
+#EXTINF:-1 group-title="BeIN",REELPX CINEMA
+http://172.25.25.102:80/ReelPx-Action/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN MEZZE
+http://172.25.25.102:80/osn-mezze/index.m3u8
+#EXTINF:-1 group-title="BeIN",DISCOVERY HD
+http://172.25.25.102:80/DiscoveryHD/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN MOVIES FIRST
+http://172.25.25.102:80/OSNMoviesFirst/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA CINEMA
+http://172.25.25.102:80/RotanaCinema/index.m3u8
+#EXTINF:-1 group-title="BeIN",ABU DHABI
+http://172.25.25.102:80/Abu-Dhabi/index.m3u8
+#EXTINF:-1 group-title="BeIN",REEL PX COMEDY
+http://172.25.25.102:80/REELPXCOMEDY/index.m3u8
+#EXTINF:-1 group-title="BeIN",KSA sport 2
+http://172.25.25.102:80/ksasport2/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON Netflix Kids
+http://172.25.25.102:80/ontv_extra1/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON Netflix Series
+http://172.25.25.102:80/ontv_extra2/index.m3u8
+#EXTINF:-1 group-title="BeIN",MTV
+http://172.25.25.102:80/mtv/index.m3u8
+#EXTINF:-1 group-title="BeIN",Alfa CINEMA 1
+http://172.25.25.102:80/cinema11/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALAHD
+http://172.25.25.102:80/al3ahd/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALRAFIDEN
+http://172.25.25.102:80/alrafiden/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALARABY
+http://172.25.25.102:80/alghadal3arby/index.m3u8
+#EXTINF:-1 group-title="BeIN",LBC
+http://172.25.25.102:80/LBC/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA DRAMA
+http://172.25.25.102:80/rotanadrama/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA KHALIJIA
+http://172.25.25.102:80/rotanakhalijia/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA CLASSIC
+http://172.25.25.102:80/rotanaclassic/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA AFLAM
+http://172.25.25.102:80/rotanaaflam/index.m3u8
+#EXTINF:-1 group-title="BeIN",OTV
+http://172.25.25.102:80/otv/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALHAYAT
+http://172.25.25.102:80/alhayathd/index.m3u8
+#EXTINF:-1 group-title="BeIN",SHC
+http://172.25.25.102:80/samatv/index.m3u8
+#EXTINF:-1 group-title="BeIN",SAMA DRAMA
+http://172.25.25.102:80/samadrama/index.m3u8
+#EXTINF:-1 group-title="BeIN",SHOW TV
+http://172.25.25.102:80/show/index.m3u8
+#EXTINF:-1 group-title="BeIN",A2
+http://172.25.25.102:80/atv2/index.m3u8
+#EXTINF:-1 group-title="BeIN",KANAL D
+http://172.25.25.102:80/kanald/index.m3u8
+#EXTINF:-1 group-title="BeIN",TRT2
+http://172.25.25.102:80/trt2/index.m3u8
+#EXTINF:-1 group-title="BeIN",EURO STAR
+http://172.25.25.102:80/eurostar/index.m3u8
+#EXTINF:-1 group-title="BeIN",ATV SPOR
+http://172.25.25.102:80/atvsport/index.m3u8
+#EXTINF:-1 group-title="BeIN",TRT ARABIC
+http://172.25.25.102:80/trtarabic/index.m3u8
+#EXTINF:-1 group-title="BeIN",Net Tv
+http://172.25.25.102:80/nrtsres/index.m3u8
+#EXTINF:-1 group-title="BeIN",NRT HD
+http://172.25.25.102:80/nrtHD/index.m3u8
+#EXTINF:-1 group-title="BeIN",KURDMAX MUSIC
+http://172.25.25.102:80/kurdma_music/index.m3u8
+#EXTINF:-1 group-title="BeIN",KURDSAT
+http://172.25.25.102:80/kurdsat/index.m3u8
+#EXTINF:-1 group-title="BeIN",KURD NEWS
+http://172.25.25.102:80/kurdnews/index.m3u8
+#EXTINF:-1 group-title="BeIN",WAAR
+http://172.25.25.102:80/war/index.m3u8
+#EXTINF:-1 group-title="BeIN",SHOW HD
+http://172.25.25.102:80/showhd/index.m3u8
+#EXTINF:-1 group-title="BeIN",RUDWA
+http://172.25.25.102:80/rudwa/index.m3u8
+#EXTINF:-1 group-title="BeIN",NRT4
+http://172.25.25.102:80/nrt4/index.m3u8
+#EXTINF:-1 group-title="BeIN",KOREK
+http://172.25.25.102:80/korek/index.m3u8
+#EXTINF:-1 group-title="BeIN",NRT2
+http://172.25.25.102:80/nrt5/index.m3u8
+#EXTINF:-1 group-title="BeIN",NRT3
+http://172.25.25.102:80/nrt6/index.m3u8
+#EXTINF:-1 group-title="BeIN",K24
+http://172.25.25.102:80/k24/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn JUNIOR
+http://172.25.25.102:80/n_disney/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn The World
+http://172.25.25.102:80/n_doc/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY THRILLER
+http://172.25.25.102:80/skyhits/index.m3u8
+#EXTINF:-1 group-title="BeIN",alfa SERIES 1
+http://172.25.25.102:80/osnmusalsat/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROTANA MUSIC
+http://172.25.25.102:80/Rotana_music/index.m3u8
+#EXTINF:-1 group-title="BeIN",ON TV NETFLIX
+http://172.25.25.102:80/ON-NETFLIX/index.m3u8
+#EXTINF:-1 group-title="BeIN",2K CINEMA
+http://172.25.25.102:80/cinema_2k/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALGHAD ALMOSHREQ
+http://172.25.25.102:80/Alghad-Almushraq/index.m3u8
+#EXTINF:-1 group-title="BeIN",BBC ARABIC
+http://172.25.25.102:80/bbc-arabic/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALHURRA IRAQ
+http://172.25.25.102:80/Alhurra-Iraq/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALJAZERA DOCUMENTARY
+http://172.25.25.102:80/AlJazeera-Documentary/index.m3u8
+#EXTINF:-1 group-title="BeIN",CBC DRAMA
+http://172.25.25.102:80/cbc-drama/index.m3u8
+#EXTINF:-1 group-title="BeIN",CBC SOFRA
+http://172.25.25.102:80/CBC-Sofra/index.m3u8
+#EXTINF:-1 group-title="BeIN",RT ARABIC
+http://172.25.25.102:80/RT-Arab/index.m3u8
+#EXTINF:-1 group-title="BeIN",AL JADEED
+http://172.25.25.102:80/Al-Jadeed/index.m3u8
+#EXTINF:-1 group-title="BeIN",NBN LEBANON
+http://172.25.25.102:80/Nbn-Lebanon/index.m3u8
+#EXTINF:-1 group-title="BeIN",Sama Dubai
+http://172.25.25.102:80/Sama-Dubai/index.m3u8
+#EXTINF:-1 group-title="BeIN",Dubai-TV
+http://172.25.25.102:80/Dubai-TV/index.m3u8
+#EXTINF:-1 group-title="BeIN",ABU DHABI DRAMA
+http://172.25.25.102:80/Abu-Dhabi-Drama/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALJAZEERA
+http://172.25.25.102:80/AR-Al-Jazeera/index.m3u8
+#EXTINF:-1 group-title="BeIN",SPACETOON
+http://172.25.25.102:80/Spacetoon/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALAAN
+http://172.25.25.102:80/Alaan-TV/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALIRAQIA ELEKHBAREA
+http://172.25.25.102:80/Iraqia-News/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALFORAT
+http://172.25.25.102:80/AlForat/index.m3u8
+#EXTINF:-1 group-title="BeIN",HONA BAGHDAD
+http://172.25.25.102:80/Hona-Baghdad/index.m3u8
+#EXTINF:-1 group-title="BeIN",DMC
+http://172.25.25.102:80/DMC/index.m3u8
+#EXTINF:-1 group-title="BeIN",DMC DRAMA
+http://172.25.25.102:80/DMC-Drama/index.m3u8
+#EXTINF:-1 group-title="BeIN",AFAQ
+http://172.25.25.102:80/Afaq/index.m3u8
+#EXTINF:-1 group-title="BeIN",KURDMAX
+http://172.25.25.102:80/kurdmax/index.m3u8
+#EXTINF:-1 group-title="BeIN",ROJAVA
+http://172.25.25.102:80/Rojava/index.m3u8
+#EXTINF:-1 group-title="BeIN",KURDMAX SHOW
+http://172.25.25.102:80/KurdMax-Show-TV/index.m3u8
+#EXTINF:-1 group-title="BeIN",atv
+http://172.25.25.102:80/atv/index.m3u8
+#EXTINF:-1 group-title="BeIN",Payam
+http://172.25.25.102:80/Payam/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn DRAMA
+http://172.25.25.102:80/n_drama/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn HBO MAX
+http://172.25.25.102:80/n_hbo_max/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn ON DEMAND
+http://172.25.25.102:80/n_ondemand/index.m3u8
+#EXTINF:-1 group-title="BeIN",ndn PREMIERE
+http://172.25.25.102:80/n_primere/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN NEWS
+http://172.25.25.102:80/Osn-News/index.m3u8
+#EXTINF:-1 group-title="BeIN",VH1
+http://172.25.25.102:80/VH1/index.m3u8
+#EXTINF:-1 group-title="BeIN",MUSIC NOW
+http://172.25.25.102:80/Music-now/index.m3u8
+#EXTINF:-1 group-title="BeIN",alfa SERIES 2
+http://172.25.25.102:80/osnmusalsat2/index.m3u8
+#EXTINF:-1 group-title="BeIN",LABWJAD
+http://172.25.25.102:80/Laabwjad/index.m3u8
+#EXTINF:-1 group-title="BeIN",WOMAN
+http://172.25.25.102:80/Woman/index.m3u8
+#EXTINF:-1 group-title="BeIN",MOTOR VISION
+http://172.25.25.102:80/motorvision/index.m3u8
+#EXTINF:-1 group-title="BeIN",FASHION BOX
+http://172.25.25.102:80/Fashion-Box/index.m3u8
+#EXTINF:-1 group-title="BeIN",FAST BOX
+http://172.25.25.102:80/FastBox/index.m3u8
+#EXTINF:-1 group-title="BeIN",CN Arabic
+http://172.25.25.102:80/CartoonNetwork/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY FAMILY
+http://172.25.25.102:80/SkyFamily/index.m3u8
+#EXTINF:-1 group-title="BeIN",SKY DRAMA
+http://172.25.25.102:80/SkyDrama/index.m3u8
+#EXTINF:-1 group-title="BeIN",REEL PX CINEMA
+http://172.25.25.102:80/REELPXCINEMA/index.m3u8
+#EXTINF:-1 group-title="BeIN",REEL PX UNLIMTE
+http://172.25.25.102:80/REELPXUNLIMTE/index.m3u8
+#EXTINF:-1 group-title="BeIN",REELPX FAMELY
+http://172.25.25.102:80/REELPXFAMELY/index.m3u8
+#EXTINF:-1 group-title="BeIN",TFC
+http://172.25.25.102:80/TFC/index.m3u8
+#EXTINF:-1 group-title="BeIN",OSN-SERIES
+http://172.25.25.102:80/OSN-SERIES/index.m3u8
+#EXTINF:-1 group-title="BeIN",ALRYAN
+http://172.25.25.102:80/ALRYAN/index.m3u8
+#EXTINF:-1 group-title="BeIN",Iraqi Education
+http://172.25.25.102:80/iraqi_edu/index.m3u8
+#EXTINF:-1 group-title="BeIN",AlShabab Sport HD
+http://172.25.25.102:80/AlShabab_Sport_HD/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Gourment
+http://172.25.25.102:80/IFCGourment/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Masrahyat
+http://172.25.25.102:80/IFCMasrahyat/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Fancy
+http://172.25.25.102:80/IFCFancy/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Mistory
+http://172.25.25.102:80/IFCMistory/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Panorama
+http://172.25.25.102:80/IFCPanorama/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Arabic
+http://172.25.25.102:80/IFCArabic/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Kids
+http://172.25.25.102:80/IFCKids/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Universe
+http://172.25.25.102:80/IFCUniverse/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Comedy
+http://172.25.25.102:80/IFCComedy/index.m3u8
+#EXTINF:-1 group-title="BeIN",IFC Turkey
+http://172.25.25.102:80/IFCTurkey/index.m3u8
+#EXTINF:-1 group-title="BeIN",ELEVEN 1
+http://172.25.25.102:80/eleven1/index.m3u8
+#EXTINF:-1 group-title="BeIN",ELEVEN 2
+http://172.25.25.102:80/eleven2/index.m3u8

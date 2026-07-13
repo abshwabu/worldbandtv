@@ -26,6 +26,11 @@
     ["legislative", "Legislative"], ["shop", "Shopping"], ["weather", "Weather"]
   ];
 
+  // Bundled local playlists (id, display name, path relative to app root).
+  const BUILTIN_PLAYLISTS = [
+    ["bein", "BeIN", "playlists/bein.m3u"]
+  ];
+
   const NSFW_PATTERN = /adult|xxx|porn|erotic/i;
 
   /* ---------------------------------------------------------------------
@@ -293,6 +298,18 @@
     renderChannels(readLS(LS_RECENT));
   }
 
+  async function loadBuiltinPlaylist(id, name, path) {
+    state.view = "builtin-" + id;
+    setStageHeader(name, "Local IPTV channels", false);
+    setLoading(true, "Loading " + name + "…");
+    try {
+      renderChannels(await fetchM3U(path, name));
+    } catch (e) {
+      showToast("Couldn't load \u201c" + name + "\u201d. Check that the stream server is reachable.");
+      renderChannels([]);
+    } finally { setLoading(false); }
+  }
+
   async function loadCustomPlaylist(playlist) {
     state.view = "custom";
     setStageHeader(playlist.name, playlist.url, false);
@@ -310,6 +327,13 @@
      --------------------------------------------------------------------- */
   function buildCategoryNav() {
     const frag = document.createDocumentFragment();
+    BUILTIN_PLAYLISTS.forEach(([id, name, path]) => {
+      const item = document.createElement("div");
+      item.className = "nav-item"; item.tabIndex = 0;
+      item.innerHTML = '<span class="dot"></span>' + name;
+      item.addEventListener("click", () => { setActiveNav(item); loadBuiltinPlaylist(id, name, path); });
+      frag.appendChild(item);
+    });
     CATEGORIES.forEach(([id, name]) => {
       const item = document.createElement("div");
       item.className = "nav-item"; item.tabIndex = 0;

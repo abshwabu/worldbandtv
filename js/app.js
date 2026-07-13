@@ -405,6 +405,65 @@
      Player
      --------------------------------------------------------------------- */
   let hls = null;
+  let dialBuffer = "";
+  let dialTimer = null;
+
+  function digitFromKey(e) {
+    if (e.key && e.key.length === 1 && e.key >= "0" && e.key <= "9") return e.key;
+    const code = e.keyCode;
+    if (code >= 48 && code <= 57) return String(code - 48);
+    if (code >= 96 && code <= 105) return String(code - 96);
+    return null;
+  }
+
+  function maxDialDigits() {
+    return Math.max(1, Math.min(4, String(state.stations.length).length));
+  }
+
+  function updateDialDisplay() {
+    if (!dialBuffer) {
+      el.channelNumber.classList.remove("dialing");
+      if (state.currentIndex >= 0) {
+        el.channelNumber.textContent = String(state.currentIndex + 1).padStart(3, "0");
+      }
+      return;
+    }
+    el.channelNumber.classList.add("dialing");
+    el.channelNumber.textContent = dialBuffer.padStart(3, "\u00b7");
+  }
+
+  function clearDial() {
+    clearTimeout(dialTimer);
+    dialTimer = null;
+    dialBuffer = "";
+    updateDialDisplay();
+  }
+
+  function commitDial() {
+    clearTimeout(dialTimer);
+    dialTimer = null;
+    if (!dialBuffer) return;
+    const typed = dialBuffer;
+    const num = parseInt(dialBuffer, 10);
+    dialBuffer = "";
+    updateDialDisplay();
+    if (!num || num < 1 || num > state.stations.length) {
+      showToast("No channel " + typed + " in this list (1\u2013" + state.stations.length + ").");
+      return;
+    }
+    playIndex(num - 1, { zap: true });
+  }
+
+  function appendDialDigit(d) {
+    showOverlay();
+    clearTimeout(dialTimer);
+    dialBuffer += d;
+    const max = maxDialDigits();
+    if (dialBuffer.length > max) dialBuffer = dialBuffer.slice(-max);
+    updateDialDisplay();
+    el.playerView.focus();
+    dialTimer = setTimeout(commitDial, 1500);
+  }
 
   function openPlayer(list, index) {
     state.currentIndex = index;
@@ -418,6 +477,7 @@
   function closePlayer() {
     document.body.classList.remove("player-open");
     el.playerView.classList.remove("active");
+    clearDial();
     stopStream();
     if (state.stations.length) renderChannels(state.stations);
     // Return focus to the grid card that was playing, if still present.
@@ -438,7 +498,10 @@
   }
 
   function updatePlayerMeta(ch, index) {
-    el.channelNumber.textContent = String(index + 1).padStart(3, "0");
+    if (!dialBuffer) {
+      el.channelNumber.textContent = String(index + 1).padStart(3, "0");
+      el.channelNumber.classList.remove("dialing");
+    }
     el.playerName.textContent = ch.name;
     el.playerMeta.textContent = [ch.group, ch.country].filter(Boolean).join(" · ") || "Live channel";
     el.playerLogo.innerHTML = "";
@@ -614,22 +677,39 @@
     const isInput = document.activeElement && document.activeElement.tagName === "INPUT";
 
     if (inPlayer) {
+      const digit = digitFromKey(e);
+      if (digit !== null) {
+        appendDialDigit(digit);
+        e.preventDefault();
+        return;
+      }
+
       const onBtn = document.activeElement && document.activeElement.classList.contains("pbtn");
       const overlayVisible = !el.playerOverlay.classList.contains("hidden");
       switch (e.keyCode) {
         case 37:
+          if (dialBuffer) { clearDial(); e.preventDefault(); break; }
           if (overlayVisible) { focusPlayerButtons("left"); e.preventDefault(); }
           break;
         case 39:
+          if (dialBuffer) { clearDial(); e.preventDefault(); break; }
           if (overlayVisible) { focusPlayerButtons("right"); e.preventDefault(); }
           break;
-        case 38: playIndex(state.currentIndex - 1, { zap: true }); e.preventDefault(); break;
-        case 40: playIndex(state.currentIndex + 1, { zap: true }); e.preventDefault(); break;
+        case 38:
+          if (dialBuffer) clearDial();
+          playIndex(state.currentIndex - 1, { zap: true }); e.preventDefault(); break;
+        case 40:
+          if (dialBuffer) clearDial();
+          playIndex(state.currentIndex + 1, { zap: true }); e.preventDefault(); break;
         case 13: case 23:
+          if (dialBuffer) { commitDial(); e.preventDefault(); break; }
           if (onBtn) { document.activeElement.click(); e.preventDefault(); }
           else { toggleOverlay(); e.preventDefault(); }
           break;
-        case 461: case 8: closePlayer(); e.preventDefault(); break;
+        case 461: case 8:
+          if (dialBuffer) { clearDial(); e.preventDefault(); }
+          else { closePlayer(); e.preventDefault(); }
+          break;
         case 415: el.video.play(); break;
         case 19: el.video.pause(); break;
         case 413: closePlayer(); break;
